@@ -5,10 +5,13 @@ get '/' do
   "Hello World"
 end
 
-get '/cat' do
-  "something's up"
-end
+# get '/random-cat' do
+#   @cuddles = ["stuff", "fluff"].sample
+#   erb(:index)
+# end
 
-get '/smth' do
-  "do something for god's sake"
+get '/named-cat' do
+  # p params
+  @cuddles = params[:catname]
+  erb(:index)
 end
