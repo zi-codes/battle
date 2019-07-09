@@ -10,8 +10,12 @@ end
 #   erb(:index)
 # end
 
-get '/named-cat' do
+get '/cat-form' do
   # p params
-  @cuddles = params[:catname]
-  erb(:index)
+  erb(:cat_form)
+end
+
+post '/named-cat' do
+  @name = params[:catname]
+  erb(:named_cat)
 end
